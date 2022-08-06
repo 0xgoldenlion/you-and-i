@@ -9,6 +9,7 @@ import { useAppContext } from "../components/context";
 import toast, { Toaster } from "react-hot-toast";
 import { CHAIN_EXPLORER } from "../lib/defaults";
 import { createByteArrFromString } from "../lib/byteArrHelpers";
+import { NFTStorage } from 'nft.storage'
 
 export const CreateSong: React.FC<{ notes?: string; defaultBPM?: string }> = ({
     notes,
@@ -31,6 +32,9 @@ export const CreateSong: React.FC<{ notes?: string; defaultBPM?: string }> = ({
         const provider = context.provider;
         const signer = context.signer;
         const contract = context.contract;
+        const NFT_STORAGE_TOKEN = process.env.NEXT_NFT_STORAGE_TOKEN;
+        const client = new NFTStorage({ token: NFT_STORAGE_TOKEN })
+
         if (provider && signer && contract) {
             const contractWithSigner = contract.connect(signer);
 
@@ -67,6 +71,11 @@ export const CreateSong: React.FC<{ notes?: string; defaultBPM?: string }> = ({
                 ),
                 { position: "top-center", duration: 10000 }
             );
+            const metadata = await client.store({
+                name: name,
+                bpm: bpm
+              })
+            
             console.log("executed create new song: ", res);
         } else {
             console.error("Could not verify provider or signer or contract");

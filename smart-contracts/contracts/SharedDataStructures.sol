@@ -20,5 +20,6 @@ library SharedDataStructures {
         //@notice we use uint32 for struct packing
         uint32 id;
         uint32 bpm;
+        string image;
     }
 }

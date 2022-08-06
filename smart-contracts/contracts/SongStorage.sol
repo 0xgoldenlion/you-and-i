@@ -31,7 +31,8 @@ contract SongStorage {
             bool,
             bytes32[] memory,
             uint32,
-            uint32
+            uint32,
+            string memory
         )
     {
         require(id < songs.length);
@@ -44,7 +45,8 @@ contract SongStorage {
             currSong.isDeleted,
             currSong.notes,
             currSong.id,
-            currSong.bpm
+            currSong.bpm,
+            currSong.image
         );
     }
 
@@ -76,7 +78,8 @@ contract SongStorage {
                 isDeleted: false,
                 notes: new bytes32[](0),
                 id: newId,
-                bpm: uint32(bpm)
+                bpm: uint32(bpm),
+                image: "https://bafkreihyx7xlmpvk77pq4shsgwwoo53ie4pmflozj34h77pdl4plh4m25a.ipfs.nftstorage.link/"
             })
         );
 
