@@ -159,7 +159,7 @@ const SongPage: NextPage = () => {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Thalia</title>
+                <title>YOU and I</title>
                 <meta name="description" content="On-chain music composition" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

@@ -33,7 +33,7 @@ export const CreateSong: React.FC<{ notes?: string; defaultBPM?: string }> = ({
         const signer = context.signer;
         const contract = context.contract;
         const NFT_STORAGE_TOKEN = process.env.NEXT_NFT_STORAGE_TOKEN;
-        const client = new NFTStorage({ token: NFT_STORAGE_TOKEN })
+        const client = new NFTStorage({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDU3MzYzMDg1YzdDOTY1ZjFkNjRDREE2MTcxMTBkNUQ4NjRhNGY1ZjQiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY1Nzc4MTQ4NDI0MSwibmFtZSI6InNhZnJlZSJ9.EbkAr2OabBm_M6iU1hBipBjDtRmH-DO5M3INt8Td2T8' })
 
         if (provider && signer && contract) {
             const contractWithSigner = contract.connect(signer);
@@ -90,7 +90,7 @@ export const CreateSong: React.FC<{ notes?: string; defaultBPM?: string }> = ({
     return (
         <div className={styles.container}>
             <Head>
-                <title>Thalia</title>
+                <title>YOU and I </title>
                 <meta name="description" content="On-chain music composition" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
