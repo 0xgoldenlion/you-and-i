@@ -71,10 +71,10 @@ export const CreateSong: React.FC<{ notes?: string; defaultBPM?: string }> = ({
                 ),
                 { position: "top-center", duration: 10000 }
             );
-            const metadata = await client.store({
-                name: name,
-                bpm: bpm
-              })
+            // const metadata = await client.store({
+            //     name: name,
+            //     bpm: bpm
+            //   })
             
             console.log("executed create new song: ", res);
         } else {
